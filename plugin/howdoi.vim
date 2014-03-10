@@ -67,21 +67,21 @@ function! s:CreateMaps(target, desc, combo)
   execute 'noremap <unique> <script> ' . plug . ' :call <SID>' . a:target . '()<CR>'
 
   " Setup default combo
-  if strlen(a:combo) && !exists("no_plugin_maps")
-    if !hasmapto(plug)
-      execute 'map ' . a:combo . ' ' . plug
-    endif
-  endif
+  "if strlen(a:combo) && !exists("no_plugin_maps")
+    "if !hasmapto(plug)
+      "execute 'map ' . a:combo . ' ' . plug
+    "endif
+  "endif
 
-  " Menu entry
-  let menu_command = 'amenu <silent>' . '&Plugin.howdoi' . '.' . escape(a:desc, ' ')
-  if strlen(a:combo)
-    let menu_command .= '<Tab>' . a:combo . ' ' . plug
-  else
-    " Separator
-    let menu_command .= ' :'
-  endif
-  execute menu_command
+  "" Menu entry
+  "let menu_command = 'amenu <silent>' . '&Plugin.howdoi' . '.' . escape(a:desc, ' ')
+  "if strlen(a:combo)
+    "let menu_command .= '<Tab>' . a:combo . ' ' . plug
+  "else
+    "" Separator
+    "let menu_command .= ' :'
+  "endif
+  "execute menu_command
 
 endfunction
 
